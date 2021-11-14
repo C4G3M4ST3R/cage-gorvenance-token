@@ -33,8 +33,8 @@ module.exports = {
         mnemonic: process.env.SEED
       }
     },
-    rinkeby: {
-      url: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.ALCHEMY_KEY}`,
+    ropsten: {
+      url: `https://eth-ropsten.alchemyapi.io/v2/${process.env.ALCHEMY_KEY}`,
       accounts: {
         mnemonic: process.env.TEST_SEED
       }
