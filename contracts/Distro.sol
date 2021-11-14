@@ -62,7 +62,7 @@ contract Distro is IDistro, Ownable {
     /// @dev Only admin can call it once.
     function mintDistros(address auctionReceiver, address farmingReceiver,  address teamReceiver, address developmentReceiver, address reserveReceiver) external override {
         require(auctionReceiver != address(0) && farmingReceiver != address(0) && developmentReceiver != address(0) && reserveReceiver != address(0) && teamReceiver != address(0), 'mintDistros: Can not be zero address!');
-        require(developmentLockContract == address(0) && reserveLockContract == address(0) && teamLockContract == address(0), 'mintDistros: Already locked!');
+        require(farmingLockContract == address(0) && developmentLockContract == address(0) && reserveLockContract == address(0) && teamLockContract == address(0), 'mintDistros: Already locked!');
   
         farmingLockContract = address(new CliffVesting(farmingReceiver, 14 days, 14 days, address(cgtToken)));    //  14 days cliff & vesting period
         teamLockContract = address(new CliffVesting(teamReceiver, 60 days, 720 days, address(cgtToken)));    //  1 month cliff  24 months vesting
@@ -72,8 +72,8 @@ contract Distro is IDistro, Ownable {
         cgtToken.mint(auctionReceiver, 30000 ether);  // 30k tokens
 
         cgtToken.mint(farmingLockContract, 15000 ether);  // 15k tokens
-        cgtToken.mint(teamLockContract, 5000 ether);  // 10k tokens
-        cgtToken.mint(developmentLockContract, 5000 ether);  // 10k tokens
+        cgtToken.mint(teamLockContract, 10000 ether);  // 10k tokens
+        cgtToken.mint(developmentLockContract, 10000 ether);  // 10k tokens
         cgtToken.mint(reserveLockContract, 30000 ether);    // 30k tokens
     }
 
