@@ -94,7 +94,7 @@ contract InvestorsVesting is IVesting, Ownable {
 
     /// @notice Start vesting process
     /// @dev After this method investors can claim their tokens
-    function setStart() external override onlyOwner {
+    function setStart() external override  {
         start = block.timestamp;
         finish = start.add(VESTING_DELAY);
     }
