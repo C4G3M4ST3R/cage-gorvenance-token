@@ -15,7 +15,7 @@ contract Cgt is ERC20PresetMinterPauser, Ownable {
     // CONSTRUCTOR
     // ------------------------
 
-    constructor () ERC20PresetMinterPauser('Cgt', 'CGT') {
+    constructor () ERC20PresetMinterPauser('Cage Governance Token', 'CGT') {
         // Silence
     }
 
