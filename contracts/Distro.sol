@@ -64,9 +64,9 @@ contract Distro is IDistro, Ownable {
         require(auctionReceiver != address(0) && farmingReceiver != address(0) && developmentReceiver != address(0) && reserveReceiver != address(0) && teamReceiver != address(0), 'mintDistros: Can not be zero address!');
         require(developmentLockContract == address(0) && reserveLockContract == address(0) && teamLockContract == address(0), 'mintDistros: Already locked!');
   
-        farmingLockContract = address(new CliffVesting(farmingReceiver, 14 days, 60 days, address(cgtToken)));    //  14 days cliff  2 months vesting
-        teamLockContract = address(new CliffVesting(teamReceiver, 60 days, 720 days, address(cgtToken)));    //  1 month cliff  6 months vesting
-        developmentLockContract = address(new CliffVesting(developmentReceiver, 60 days, 365 days, address(cgtToken)));      //  7 days cliff   3 months vesting
+        farmingLockContract = address(new CliffVesting(farmingReceiver, 14 days, 14 days, address(cgtToken)));    //  14 days cliff & vesting period
+        teamLockContract = address(new CliffVesting(teamReceiver, 60 days, 720 days, address(cgtToken)));    //  1 month cliff  24 months vesting
+        developmentLockContract = address(new CliffVesting(developmentReceiver, 30 days, 365 days, address(cgtToken)));      //  30 days cliff   12 months vesting
         reserveLockContract = address(new CliffVesting(reserveReceiver, 60 days, 720 days, address(cgtToken)));        //  2 months cliff 2 years vesting
 
         cgtToken.mint(auctionReceiver, 30000 ether);  // 30k tokens
