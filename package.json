@@ -1,0 +1,22 @@
+{
+  "name": "cage-token-v2",
+  "version": "1.0.0",
+  "description": "### Tests",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C4G3M4ST3R/cage-token-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/C4G3M4ST3R/cage-token-v2/issues"
+  },
+  "homepage": "https://github.com/C4G3M4ST3R/cage-token-v2#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0"
+  }
+}
