@@ -1,4 +1,4 @@
-# CGT contracts
+# C4G3 V2 contracts
 
 ### Tests
 

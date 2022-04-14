@@ -3,7 +3,7 @@ pragma solidity ^0.8.4;
 
 import '@openzeppelin/contracts/access/Ownable.sol';
 import '@openzeppelin/contracts/utils/math/SafeMath.sol';
-import './interfaces/ICgt.sol';
+import './interfaces/IC4g3.sol';
 import './CliffVesting.sol';
 import './interfaces/IVesting.sol';
 
@@ -18,7 +18,7 @@ contract InvestorsVesting is IVesting, Ownable {
     uint256 public constant VESTING_DELAY = 30 days;
 
 
-    ICgt public immutable cgtToken;
+    IC4g3 public immutable cgtToken;
 
     struct Investor {
      
@@ -42,7 +42,7 @@ contract InvestorsVesting is IVesting, Ownable {
     // ------------------------
 
     constructor(address token_) {
-        cgtToken = ICgt(token_);
+        cgtToken = IC4g3(token_);
     }
 
     // ------------------------

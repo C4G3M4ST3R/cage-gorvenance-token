@@ -6,16 +6,16 @@ import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 import '@openzeppelin/contracts/token/ERC20/presets/ERC20PresetMinterPauser.sol';
 
 
-contract Cgt is ERC20PresetMinterPauser, Ownable {
+contract C4g3 is ERC20PresetMinterPauser, Ownable {
     using SafeMath for uint256;
     
-    uint256 public constant MAX_SUPPLY = 100000 ether;
+    uint256 public constant MAX_SUPPLY = 500000000 ether;
 
     // ------------------------
     // CONSTRUCTOR
     // ------------------------
 
-    constructor () ERC20PresetMinterPauser('Cage Governance Token', 'CGT') {
+    constructor () ERC20PresetMinterPauser('Cage Token', 'C4G3') {
         // Silence
     }
 

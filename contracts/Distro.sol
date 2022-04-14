@@ -8,13 +8,13 @@ import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 import { InvestorsVesting, IVesting } from './InvestorsVesting.sol';
 import './CliffVesting.sol';
 import './interfaces/IDistro.sol';
-import './interfaces/ICgt.sol';
+import './interfaces/IC4g3.sol';
 
 
 contract Distro is IDistro, Ownable {
     using SafeMath for uint256;
 
-    ICgt public cgtToken;
+    IC4g3 public cgtToken;
     IVesting public immutable vesting;
 
     address public reserveLockContract;                                                      
@@ -33,7 +33,7 @@ contract Distro is IDistro, Ownable {
 
     constructor(address cgtToken_) {
         require(cgtToken_ != address(0), 'Distro: Empty token address!');
-        cgtToken = ICgt(cgtToken_);
+        cgtToken = IC4g3(cgtToken_);
 
         address vestingAddr = address(new InvestorsVesting(cgtToken_));
         vesting = IVesting(vestingAddr);
