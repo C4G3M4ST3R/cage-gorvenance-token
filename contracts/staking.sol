@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 // Cloned from https://github.com/SashimiProject/sashimiswap/blob/master/contracts/MasterChef.sol
 // Modified by LTO Network to work for non-mintable ERC20.
 
-contract Farming is Ownable {
+contract Staking is Ownable {
 
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
@@ -46,7 +46,7 @@ contract Farming is Ownable {
     // Address of the ERC20 Token contract.
     IERC20 public erc20;
     // The total amount of ERC20 that's paid out as reward.
-    uint256 public paidOut;
+/    uint256 public paidOut;
     // ERC20 tokens rewarded per second.
     uint256 public rewardPerSecond;
     // Total rewards added to farm
@@ -58,9 +58,9 @@ contract Farming is Ownable {
     // Total allocation points. Must be the sum of all allocation points in all pools.
     uint256 public totalAllocPoint;
 
-    // The timestamp when farming starts.
+    // The timestamp when staking starts.
     uint256 public startTimestamp;
-    // The timestamp when farming ends.
+    // The timestamp when staking ends.
     uint256 public endTimestamp;
 
     event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
